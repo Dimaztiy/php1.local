@@ -24,9 +24,9 @@ if($cab instanceof Item){ //определяется принадлежност�
 }                         //  а также родительскому классу Item
 */
 
-foreach (getGuestBookRecords() as $record){
+/*foreach (getGuestBookRecords() as $record){
     echo $record->getMessage();
-}
+}*/
 
 
 ?>
@@ -42,6 +42,13 @@ foreach (getGuestBookRecords() as $record){
 </head>
 <body>
 
+
+/*
+
+От 16.12.20
+1. Написать форму для отправки данных на сервер
+
+*/
 
 <!--<form action="/upload.php" method="post" enctype="multipart/form-data">
     <input type="file" name="picture">

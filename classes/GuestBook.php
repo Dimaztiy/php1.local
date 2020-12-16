@@ -1,6 +1,6 @@
 <?php
 
-
+require_once __DIR__ . '/GuestBookRecord.php';
 class GuestBook
 {
     protected $data;
@@ -32,8 +32,10 @@ class GuestBook
 
     public function save()
     {
+        $lines[];
         foreach ($this->data as $record) {
-            file_put_contents($this->path, explode('/n', $record));
+            $lines[] = $record->getMessage();
+            file_put_contents($this->path, implode("\n", $lines));
         }
 
     }
