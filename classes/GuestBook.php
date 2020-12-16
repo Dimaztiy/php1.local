@@ -30,4 +30,12 @@ class GuestBook
         $this->data[] = $record;
     }
 
+    public function save()
+    {
+        foreach ($this->data as $record) {
+            file_put_contents($this->path, explode('/n', $record));
+        }
+
+    }
+
 }
