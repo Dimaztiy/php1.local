@@ -32,7 +32,7 @@ class GuestBook
 
     public function save()
     {
-        $lines[];
+        $lines = [];
         foreach ($this->data as $record) {
             $lines[] = $record->getMessage();
             file_put_contents($this->path, implode("\n", $lines));
