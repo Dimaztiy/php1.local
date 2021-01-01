@@ -43,6 +43,13 @@ if($cab instanceof Item){ //определяется принадлежност�
 <body>
 
 
+<form action="/append.php" method="post" enctype="multipart/form-data">
+    <p><input name="login">Логин
+    <br><input type="password" name="pass">Пароль</p>
+    <p><input type="submit"></p>
+</form>
+
+
 /*
 
 От 16.12.20
