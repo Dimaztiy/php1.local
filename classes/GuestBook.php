@@ -3,13 +3,13 @@
 require_once __DIR__ . '/GuestBookRecord.php';
 class GuestBook
 {
-    protected $data;
+    protected $data = [];
     protected $path;
 
 
-    public function __construct($path)
+    public function __construct()
     {
-        $this->path = $path;
+        $this->path = __DIR__ . '/../data.txt';
         $lines = file($this->path, FILE_IGNORE_NEW_LINES);
         foreach ($lines as $line){
             $this->data[] = new GuestBookRecord($line);
@@ -18,10 +18,6 @@ class GuestBook
 
     public function getRecords()
     {
-        $lines = file($path, FILE_IGNORE_NEW_LINES);
-        foreach ($lines as $line){
-            $this->data[] = new GuestBookRecord($line);
-        }
         return $this->data;
     }
 

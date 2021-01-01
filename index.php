@@ -1,8 +1,8 @@
 <?php
-require __DIR__ . '/classes/Cabinet.php';
-require __DIR__ . '/classes/Table.php';
-require __DIR__ . '/classes/GuestBookRecord.php';
-require __DIR__ . '/functions.php';
+//require __DIR__ . '/classes/Cabinet.php';
+//require __DIR__ . '/classes/Table.php';
+require __DIR__ . '/classes/GuestBook.php';
+//require __DIR__ . '/functions.php';
 
 /*$table = new Table(1000, 4);
 $table->color = 'red';
@@ -24,9 +24,10 @@ if($cab instanceof Item){ //определяется принадлежност�
 }                         //  а также родительскому классу Item
 */
 
-/*foreach (getGuestBookRecords() as $record){
+$guestBook = new GuestBook(__DIR__ . '/data.txt');
+foreach ($guestBook->getRecords() as $record){
     echo $record->getMessage();
-}*/
+}
 
 
 ?>
@@ -43,28 +44,10 @@ if($cab instanceof Item){ //определяется принадлежност�
 <body>
 
 
-<form action="/append.php" method="post" enctype="multipart/form-data">
-    <p><input name="login">Логин
-    <br><input type="password" name="pass">Пароль</p>
-    <p><input type="submit"></p>
-</form>
-
-
-/*
-
-От 16.12.20
-1. Написать форму для отправки данных на сервер
-
-*/
-
-<!--<form action="/upload.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="picture">
+<form action="/append.php" method="post">
+    <textarea name="message"></textarea>
     <button type="submit">Отправить</button>
 </form>
--->
-
-
-
 
 </body>
 </html>
