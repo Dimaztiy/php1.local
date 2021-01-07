@@ -9,5 +9,5 @@ $guestBook = new GuestBook();
 
 $view = new View();
 $view->assing('guestbook', $guestBook);
-
-include __DIR__ . '/templates/index.php';
+$view->display(__DIR__ . '/templates/index.php');
+//include __DIR__ . '/templates/index.php';

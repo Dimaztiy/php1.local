@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <?php foreach ($guestBook->getRecords() as $record) { ?>
+    <?php foreach ($this->data['guestbook']->getRecords() as $record) { ?>
     <article style="border: 1px dotted darkgrey; margin-bottom: 20px">
         <?php echo $record->getMessage(); ?>
     </article>
